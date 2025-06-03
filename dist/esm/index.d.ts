@@ -1,4 +1,4 @@
 import type { HardwareSignPlugin } from './definitions';
-declare const HardwareSignPlugin: HardwareSignPlugin;
+declare const HardwareSign: HardwareSignPlugin;
 export * from './definitions';
-export { HardwareSignPlugin };
+export { HardwareSign };

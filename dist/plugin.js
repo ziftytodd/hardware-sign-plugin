@@ -1,9 +1,13 @@
-(function (core) {
+var capacitorHardwareSignPlugin = (function (exports, core) {
 	'use strict';
 
-	core.registerPlugin('HardwareSignPlugin'
+	const HardwareSign = core.registerPlugin('HardwareSignPlugin'
 	// No “web” implementation is needed (or stub it out if you like).
 	);
 
-})(capacitorExports);
+	exports.HardwareSign = HardwareSign;
+
+	return exports;
+
+})({}, capacitorExports);
 //# sourceMappingURL=plugin.js.map

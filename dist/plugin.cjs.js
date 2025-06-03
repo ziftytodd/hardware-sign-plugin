@@ -2,7 +2,9 @@
 
 var core = require('@capacitor/core');
 
-core.registerPlugin('HardwareSignPlugin'
+const HardwareSign = core.registerPlugin('HardwareSignPlugin'
 // No “web” implementation is needed (or stub it out if you like).
 );
+
+exports.HardwareSign = HardwareSign;
 //# sourceMappingURL=plugin.cjs.js.map
