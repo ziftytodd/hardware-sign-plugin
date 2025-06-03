@@ -1,0 +1,123 @@
+{
+  "api": {
+    "name": "HardwareSignPlugin",
+    "slug": "hardwaresignplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "generateKey",
+        "signature": "() => Promise<GenerateKeyResult>",
+        "parameters": [],
+        "returns": "Promise<GenerateKeyResult>",
+        "tags": [],
+        "docs": "Create (or verify existence of) a hardware‑backed RSA keypair under a fixed alias.\nReturns { status: \"created\" } or { status: \"already_exists\" }.",
+        "complexTypes": [
+          "GenerateKeyResult"
+        ],
+        "slug": "generatekey"
+      },
+      {
+        "name": "sign",
+        "signature": "(options: SignOptions) => Promise<SignResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "SignOptions"
+          }
+        ],
+        "returns": "Promise<SignResult>",
+        "tags": [],
+        "docs": "Sign the provided Base64‑encoded SHA‑256 hash using the private key from KeyStore.\nReturns { signature: \"<Base64‑of‑RSA‑SHA256‑signature>\" }.",
+        "complexTypes": [
+          "SignResult",
+          "SignOptions"
+        ],
+        "slug": "sign"
+      },
+      {
+        "name": "getPublicKey",
+        "signature": "() => Promise<GetPublicKeyResult>",
+        "parameters": [],
+        "returns": "Promise<GetPublicKeyResult>",
+        "tags": [],
+        "docs": "Retrieve the public X.509 certificate (DER, Base64‑encoded) so your server can verify.\nReturns { publicKey: \"<Base64‑DER‑X509‑cert>\" }.",
+        "complexTypes": [
+          "GetPublicKeyResult"
+        ],
+        "slug": "getpublickey"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "GenerateKeyResult",
+      "slug": "generatekeyresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "“created” if a new key was generated, “already_exists” if it was already present",
+          "complexTypes": [],
+          "type": "'created' | 'already_exists'"
+        }
+      ]
+    },
+    {
+      "name": "SignResult",
+      "slug": "signresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "signature",
+          "tags": [],
+          "docs": "Base64‑encoded RSA‑SHA256 signature over the provided payload",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "SignOptions",
+      "slug": "signoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "payload",
+          "tags": [],
+          "docs": "Base64‑encoded SHA‑256 hash of the JSON payload you want to sign",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "GetPublicKeyResult",
+      "slug": "getpublickeyresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "publicKey",
+          "tags": [],
+          "docs": "Base64‑encoded X.509 certificate (DER) of the public key",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
