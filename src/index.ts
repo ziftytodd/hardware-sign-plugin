@@ -1,10 +1,12 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { HardwareSignPluginPlugin } from './definitions';
+/* eslint-disable-next-line @typescript-eslint/consistent-type-imports */
+import type { HardwareSignPlugin } from './definitions';
 
-const HardwareSignPlugin = registerPlugin<HardwareSignPluginPlugin>('HardwareSignPlugin', {
-  web: () => import('./web').then((m) => new m.HardwareSignPluginWeb()),
-});
+const HardwareSignPlugin = registerPlugin<HardwareSignPlugin>(
+    'HardwareSignPlugin'
+    // No “web” implementation is needed (or stub it out if you like).
+);
 
 export * from './definitions';
 export { HardwareSignPlugin };

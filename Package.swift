@@ -7,22 +7,22 @@ let package = Package(
     products: [
         .library(
             name: "HardwareSignPlugin",
-            targets: ["HardwareSignPluginPlugin"])
+            targets: ["HardwareSignPlugin"])
     ],
     dependencies: [
         .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", branch: "main")
     ],
     targets: [
         .target(
-            name: "HardwareSignPluginPlugin",
+            name: "HardwareSignPlugin",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
                 .product(name: "Cordova", package: "capacitor-swift-pm")
             ],
-            path: "ios/Sources/HardwareSignPluginPlugin"),
+            path: "ios/Sources/HardwareSignPlugin"),
         .testTarget(
-            name: "HardwareSignPluginPluginTests",
-            dependencies: ["HardwareSignPluginPlugin"],
-            path: "ios/Tests/HardwareSignPluginPluginTests")
+            name: "HardwareSignPluginTests",
+            dependencies: ["HardwareSignPlugin"],
+            path: "ios/Tests/HardwareSignPluginTests")
     ]
 )

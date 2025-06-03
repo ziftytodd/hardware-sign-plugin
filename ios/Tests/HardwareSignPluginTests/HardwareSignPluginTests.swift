@@ -1,5 +1,5 @@
 import XCTest
-@testable import HardwareSignPluginPlugin
+@testable import HardwareSignPlugin
 
 class HardwareSignPluginTests: XCTestCase {
     func testEcho() {
