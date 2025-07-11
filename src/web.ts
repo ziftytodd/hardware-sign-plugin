@@ -4,12 +4,13 @@ import type { HardwareSignPlugin, GenerateKeyResult, SignOptions, SignResult, Ge
 
 export class HardwareSignPluginWeb extends WebPlugin implements HardwareSignPlugin {
   async generateKey(): Promise<GenerateKeyResult> {
-    throw this.unimplemented('HardwareSignPlugin.generateKey is not implemented on web.');
+    return new Promise((res) => { res({"status": "created"})} );
   }
   async sign(options: SignOptions): Promise<SignResult> {
-    throw this.unimplemented('HardwareSignPlugin.sign is not implemented on web.');
+    console.log(options);
+    return new Promise((res) => { res({"signature": "web"})} );
   }
   async getPublicKey(): Promise<GetPublicKeyResult> {
-    throw this.unimplemented('HardwareSignPlugin.getPublicKey is not implemented on web.');
+    return new Promise((res) => { res({"publicKey": "webkey"})} );
   }
 }

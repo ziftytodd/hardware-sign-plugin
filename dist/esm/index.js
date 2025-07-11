@@ -1,7 +1,7 @@
 import { registerPlugin } from '@capacitor/core';
-const HardwareSign = registerPlugin('HardwareSignPlugin'
-// No “web” implementation is needed (or stub it out if you like).
-);
+const HardwareSign = registerPlugin('HardwareSignPlugin', {
+    web: () => import('./web').then(m => new m.HardwareSignPluginWeb()),
+});
 export * from './definitions';
 export { HardwareSign };
 //# sourceMappingURL=index.js.map

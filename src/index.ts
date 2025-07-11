@@ -4,8 +4,10 @@ import { registerPlugin } from '@capacitor/core';
 import type { HardwareSignPlugin } from './definitions';
 
 const HardwareSign = registerPlugin<HardwareSignPlugin>(
-    'HardwareSignPlugin'
-    // No “web” implementation is needed (or stub it out if you like).
+    'HardwareSignPlugin',
+    {
+        web: () => import('./web').then(m => new m.HardwareSignPluginWeb()),
+    }
 );
 
 export * from './definitions';
